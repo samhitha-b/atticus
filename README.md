@@ -14,9 +14,9 @@ This discord bot can send you timetables for your classes.
 
 ## Screenshots
 
-![atticus](https://user-images.githubusercontent.com/68789441/149507177-ea5f4cba-eb04-49b9-85fd-960c22455cb7.png)
+![atticus](https://user-images.githubusercontent.com/68789441/149509495-24b7e212-8402-4206-afae-950fffab6b92.png)
 
-![atticus2](https://user-images.githubusercontent.com/68789441/149507771-2ce07dfe-41cb-482b-b039-1ca6a5ae4bcd.png)
+![atticus2](https://user-images.githubusercontent.com/68789441/149509846-1d0abd49-f082-44de-a702-e610943a7c81.png)
 
 
 ---
