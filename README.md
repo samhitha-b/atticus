@@ -1,1 +1,1 @@
-# discordBot
+# atticus
