@@ -1,7 +1,5 @@
 import discord
 import os
-import io
-import aiohttp
 
 client = discord.Client()
 
@@ -15,34 +13,23 @@ async def on_message(msg):
     return
 
   if msg.content.startswith('-ttcs1'):
-    async with aiohttp.ClientSession() as session:
-      async with session.get("https://media.discordapp.net/attachments/920029895273381939/928909309948071966/timetable.png") as resp:
-          if resp.status != 200:
-              return await msg.channel.send('Could not download file...')
-          data = io.BytesIO(await resp.read())
-          await msg.channel.send(file=discord.File(data, 'ttcs1.png'))
+    myembed=discord.Embed(title="Timetable for CSE/CSY batch 1", color=discord.Color.yellow())
+    myembed.set_image(url="https://media.discordapp.net/attachments/920029895273381939/928909309948071966/timetable.png")
+    await msg.channel.send(embed=myembed)
+
+  if msg.content.startswith('-ttcs2'):
+    myembed=discord.Embed(title="Timetable for CSE/CSY batch 2", color=discord.Color.yellow())
+    myembed.set_image(url="https://media.discordapp.net/attachments/920029895273381939/928908186591850496/unknown.png")
+    await msg.channel.send(embed=myembed)
 
   if msg.content.startswith('-ttec1'):
-    async with aiohttp.ClientSession() as session:
-      async with session.get("https://media.discordapp.net/attachments/920029895273381939/928909310170365992/timetable_ece.png") as resp:
-          if resp.status != 200:
-              return await msg.channel.send('Could not download file...')
-          data = io.BytesIO(await resp.read())
-          await msg.channel.send(file=discord.File(data, 'ttec1.png'))
-  if msg.content.startswith('-ttcs2'):
-      async with aiohttp.ClientSession() as session:
-        async with session.get("https://media.discordapp.net/attachments/920029895273381939/928908186591850496/unknown.png") as resp:
-            if resp.status != 200:
-                return await msg.channel.send('Could not download file...')
-            data = io.BytesIO(await resp.read())
-            await msg.channel.send(file=discord.File(data, 'ttcs2.png'))
+    myembed=discord.Embed(title="Timetable for ECE batch 1", color=discord.Color.yellow())
+    myembed.set_image(url="https://media.discordapp.net/attachments/920029895273381939/928909310170365992/timetable_ece.png")
+    await msg.channel.send(embed=myembed)
 
   if msg.content.startswith('-ttec2'):
-    async with aiohttp.ClientSession() as session:
-      async with session.get("https://media.discordapp.net/attachments/920029895273381939/928907990726213692/unknown.png") as resp:
-          if resp.status != 200:
-              return await msg.channel.send('Could not download file...')
-          data = io.BytesIO(await resp.read())
-          await msg.channel.send(file=discord.File(data, 'ttec2.png'))
+    myembed=discord.Embed(title="Timetable for ECE batch 2", color=discord.Color.yellow())
+    myembed.set_image(url="https://media.discordapp.net/attachments/920029895273381939/928907990726213692/unknown.png")
+    await msg.channel.send(embed=myembed)
 
 client.run(os.getenv("TOKEN"))
